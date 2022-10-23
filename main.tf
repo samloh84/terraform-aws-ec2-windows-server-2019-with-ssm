@@ -19,7 +19,7 @@ resource "aws_instance" "main" {
   user_data_base64 = local.user_data_windows_base64
 
   credit_specification {
-    cpu_credits = var.unlimited_cpu_credits?"unlimited" : "standard"
+    cpu_credits = var.unlimited_cpu_credits ? "unlimited" : "standard"
   }
 
   tags = local.default_tags

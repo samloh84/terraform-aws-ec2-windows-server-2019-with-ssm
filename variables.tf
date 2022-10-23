@@ -65,19 +65,19 @@ variable "unlimited_cpu_credits" {
 }
 
 variable "cloudwatch_log_group_ec2_logs" {
-  type = string
+  type        = string
   description = "Cloudwatch Log Group Name for EC2 logs"
 }
 variable "cloudwatch_log_group_ssm_logs" {
-  type = string
+  type        = string
   description = "Cloudwatch Log Group Name for SSM logs"
 }
 variable "kms_key_cloudwatch_log_group_ssm_logs" {
-  type = string
+  type        = string
   description = "KMS Key for encrypting SSM logs"
 }
 
 variable "s3_bucket_ssm_logs" {
-  type = string
+  type        = string
   description = "S3 Bucket Name for SSM logs"
 }

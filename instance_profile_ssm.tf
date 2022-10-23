@@ -27,8 +27,8 @@ resource "aws_iam_role_policy_attachment" "ssm_instance_profile_iam_role_ssm_ins
 // https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-create-iam-instance-profile.html#create-iam-instance-profile-ssn-logging
 data "aws_iam_policy_document" "ssm_instance_profile_iam_policy" {
   statement {
-    sid     = "AllowDownloadFromSsmS3Buckets"
-    effect  = "Allow"
+    sid    = "AllowDownloadFromSsmS3Buckets"
+    effect = "Allow"
     actions = [
       "s3:GetObject"
     ]
@@ -46,8 +46,8 @@ data "aws_iam_policy_document" "ssm_instance_profile_iam_policy" {
   }
 
   statement {
-    sid     = "AllowLoggingToCloudWatchLogGroup"
-    effect  = "Allow"
+    sid    = "AllowLoggingToCloudWatchLogGroup"
+    effect = "Allow"
     actions = [
       "logs:CreateLogStream",
       "logs:PutLogEvents",
@@ -61,7 +61,7 @@ data "aws_iam_policy_document" "ssm_instance_profile_iam_policy" {
   }
 
   statement {
-    sid = "AllowLoggingToS3Bucket"
+    sid    = "AllowLoggingToS3Bucket"
     effect = "Allow"
     actions = [
       "s3:PutObject",
@@ -69,13 +69,13 @@ data "aws_iam_policy_document" "ssm_instance_profile_iam_policy" {
     ]
     resources = [
       "arn:aws:s3:::${var.s3_bucket_ssm_logs}",
-      "arn:aws:s3:::${var.s3_bucket_ssm_logs}/*"]
+    "arn:aws:s3:::${var.s3_bucket_ssm_logs}/*"]
   }
 
 
   statement {
-    sid     = "AllowAccessToKmsKeyForSsmLogging"
-    effect  = "Allow"
+    sid    = "AllowAccessToKmsKeyForSsmLogging"
+    effect = "Allow"
     actions = [
       "kms:Decrypt"
     ]

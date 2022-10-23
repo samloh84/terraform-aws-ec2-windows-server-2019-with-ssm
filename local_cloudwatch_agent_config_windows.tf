@@ -2,12 +2,12 @@ locals {
 
   cloudwatch_agent_config_windows = {
     "agent" = {
-      "region"                      = data.aws_region.current.name
-      "logfile"                     = "C:\\ProgramData\\Amazon\\AmazonCloudWatchAgent\\Logs\\amazon-cloudwatch-agent.log"
+      "region"  = data.aws_region.current.name
+      "logfile" = "C:\\ProgramData\\Amazon\\AmazonCloudWatchAgent\\Logs\\amazon-cloudwatch-agent.log"
     }
     "logs" : {
       "logs_collected" = {
-        "files"          = {
+        "files" = {
           "collect_list" = [
             {
               "file_path"       = "C:\\ProgramData\\Amazon\\AmazonCloudWatchAgent\\Logs\\amazon-cloudwatch-agent.log"
@@ -20,8 +20,8 @@ locals {
         "windows_events" = {
           "collect_list" = [
             {
-              "event_name"      = "System"
-              "event_levels"    = [
+              "event_name" = "System"
+              "event_levels" = [
                 "INFORMATION",
                 "ERROR"
               ]
@@ -30,8 +30,8 @@ locals {
               "event_format"    = "xml"
             },
             {
-              "event_name"      = "Security"
-              "event_levels"    = [
+              "event_name" = "Security"
+              "event_levels" = [
                 "INFORMATION",
                 "ERROR"
               ]
@@ -40,8 +40,8 @@ locals {
               "event_format"    = "xml"
             },
             {
-              "event_name"      = "Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational"
-              "event_levels"    = [
+              "event_name" = "Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational"
+              "event_levels" = [
                 "INFORMATION",
                 "ERROR"
               ]
