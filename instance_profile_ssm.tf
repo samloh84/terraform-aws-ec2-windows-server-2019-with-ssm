@@ -104,7 +104,7 @@ data "aws_iam_policy_document" "ssm_instance_profile_iam_role_assume_role_policy
 
 
 resource "aws_iam_policy" "ssm_instance_profile_iam_policy" {
-  name   = "ssm_instance_profile_iam_policy"
+  name   = "${var.name}-iam-policy"
   policy = data.aws_iam_policy_document.ssm_instance_profile_iam_policy.json
 }
 
